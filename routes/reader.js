@@ -106,16 +106,17 @@ router.get('/reader/show', function(req, res){
 
 
 
-// router.get('/user/:id', function(req,res){
-//     const userID = req.params.id;
-//     console.log(userID)
+router.get('/user/:id', function(req,res){
+    const userID = req.params.id;
+    console.log(userID)
  
-//    const user= Reader.findById(userID)
-//         .then(function(data){
-//             res.status(200).json({ message:"success",reader:data})
-//         })
-//         .catch(function(e){
-//             res.status(500).json({error : e})
-//         })
-// })
+   const user= Reader.findById(userID)
+        .then(function(data){
+            res.status(200).json({ message:"success",reader:data})
+        })
+        .catch(function(e){
+            res.status(500).json({error : e})
+        })
+})
+
 module.exports = router;
