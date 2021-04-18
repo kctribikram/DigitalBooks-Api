@@ -20,17 +20,17 @@ catch(e){
 }
 }
 
-// module.exports.verifyAdmin = function(req,res,next){
-//     if(!req.user){
-//         return res.status(401).json({
-//             success: false,
-//             message: "Unauthorized!"})
-//     }
-//     else if(req.user111!=="Admin"){
-//         return res.status(401).json({
-//             success: false,
-//             message: "Unauthorized"
-//         });
-//     }
-//     next();
-// }
+module.exports.verifyAdmin = function(req,res,next){
+    if(!req.user){
+        return res.status(401).json({
+            success: false,
+            message: "Unauthorized!"})
+    }
+    else if(req.user111!=="Admin"){
+        return res.status(401).json({
+            success: false,
+            message: "Unauthorized"
+        });
+    }
+    next();
+}
