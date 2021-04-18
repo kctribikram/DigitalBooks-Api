@@ -65,35 +65,35 @@ router.put('/reader/update/:id', function(req,res){
 })
 
 
-// router.post('/reader/login', function(req, res){
-//     const Username = req.body.Username;
-//     const Password = req.body.Password;
-//     Reader.findOne({Username : Username})
-//     .then(function(readerData){
-//         if(readerData===null){
-//           return  res.status(401).json({message: "Invalid credentials!!"})
-//         }
-//         //if username exists
-//         bcryptjs.compare(Password, readerData.Password, function(err, result){
-//             if(result==false){
-//                 return res.status(401).json({message: "Invalid credentials"}
-//                 )
-//             }
-//            const token = jwt.sign({userId : readerData._id},'anysecretkey');
-//            console.log('token .'+ token);
-//         // res.send(token)
-//            return res.status(200).json({
-//                message : "Successful",
-//                token : token,
-//                data:readerData._id,
-//                role:readerData.role
-//            })
-//         })
-//     })
-//     .catch(function(e){
-//         res.status(500).json({message: e})
-//     })
-// })
+router.post('/reader/login', function(req, res){
+    const Username = req.body.Username;
+    const Password = req.body.Password;
+    Reader.findOne({Username : Username})
+    .then(function(readerData){
+        if(readerData===null){
+          return  res.status(401).json({message: "Invalid credentials!!"})
+        }
+        //if username exists
+        bcryptjs.compare(Password, readerData.Password, function(err, result){
+            if(result==false){
+                return res.status(401).json({message: "Invalid credentials"}
+                )
+            }
+           const token = jwt.sign({userId : readerData._id},'anysecretkey');
+           console.log('token .'+ token);
+        // res.send(token)
+           return res.status(200).json({
+               message : "Successful",
+               token : token,
+               data:readerData._id,
+               role:readerData.role
+           })
+        })
+    })
+    .catch(function(e){
+        res.status(500).json({message: e})
+    })
+})
 
 
 
