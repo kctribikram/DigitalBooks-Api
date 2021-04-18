@@ -97,11 +97,11 @@ router.post('/reader/login', function(req, res){
 
 
 
-// router.get('/reader/show', function(req, res){
-//     Reader.find().then(function(data1){
-//         res.send(data1);
-//     })
-// })
+router.get('/reader/show', function(req, res){
+    Reader.find().then(function(data1){
+        res.send(data1);
+    })
+})
 
 
 
