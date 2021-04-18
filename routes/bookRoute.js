@@ -39,27 +39,27 @@ router.post('/book/insert', authentication.verifyUser, upload.fields([{name: 'Im
     })
 })
 
-// router.put('/book/update', function(req,res){
-//     const Title= req.body.Title;
-//     const Auther= req.body.Auther;
-//     const Description = req.body.Description;
-//     const PublisheDate= req.body.PublisheDate;
-//     const ISBNno= req.body.ISBNno;
-//     const Edition= req.body.Edition;
-//     const Language= req.body.Language;
-//     const Publisher= req.body.Publisher;
-//     const Cost= req.body.Cost;
-//     const Image= req.body.Image;
-//     const bid=req.body.bid;
-//     Book.updateOne({_id : bid},
-//         {Title: Title, Auther: Auther, Description: Description, PublisheDate: PublisheDate, ISBNno: ISBNno, Edition: Edition, Language: Language, Publisher: Publisher,Cost: Cost,Image: Image})
-//         .then(function(){
-//             res.status(200).json({message: "Updated successfully!"})
-//         })
-//         .catch(function(e){
-//             res.status(500).json({error: e})
-//         })
-// })
+router.put('/book/update', function(req,res){
+    const Title= req.body.Title;
+    const Auther= req.body.Auther;
+    const Description = req.body.Description;
+    const PublisheDate= req.body.PublisheDate;
+    const ISBNno= req.body.ISBNno;
+    const Edition= req.body.Edition;
+    const Language= req.body.Language;
+    const Publisher= req.body.Publisher;
+    const Cost= req.body.Cost;
+    const Image= req.body.Image;
+    const bid=req.body.bid;
+    Book.updateOne({_id : bid},
+        {Title: Title, Auther: Auther, Description: Description, PublisheDate: PublisheDate, ISBNno: ISBNno, Edition: Edition, Language: Language, Publisher: Publisher,Cost: Cost,Image: Image})
+        .then(function(){
+            res.status(200).json({message: "Updated successfully!"})
+        })
+        .catch(function(e){
+            res.status(500).json({error: e})
+        })
+})
 
 // router.delete("/book/delete/:id", function(req,res){
 //     const bid = req.params.id;
