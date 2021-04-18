@@ -28,16 +28,16 @@ router.get('/watchlist/:id', function(req, res){
     });
 })
    
-// router.delete("/watchlist/delete/:id", function(req,res){
-//     const wid = req.params.id;
-//     Watchlist.deleteOne({_id : wid})
-//         .then(function(){
-//         res.status(200).json({message: "Deleted successfully!"})
-//     })
-//     .catch(function(e){
-//         res.status(500).json({error: e})
-//     })
-// })
+router.delete("/watchlist/delete/:id", function(req,res){
+    const wid = req.params.id;
+    Watchlist.deleteOne({_id : wid})
+        .then(function(){
+        res.status(200).json({message: "Deleted successfully!"})
+    })
+    .catch(function(e){
+        res.status(500).json({error: e})
+    })
+})
 
 
 module.exports = router;
