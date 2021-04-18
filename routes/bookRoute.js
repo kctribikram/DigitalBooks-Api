@@ -72,13 +72,13 @@ router.delete("/book/delete/:id", function(req,res){
     })
 })
 
-// router.get("/book/show", function(req, res){
-//      Book.find().then(function(data){
-//         res.status(200).json({success: true, data : data})
-//     }).catch(function(e){
-//         res.status(500).json({error : e})
-//     })
-// })
+router.get("/book/show", function(req, res){
+     Book.find().then(function(data){
+        res.status(200).json({success: true, data : data})
+    }).catch(function(e){
+        res.status(500).json({error : e})
+    })
+})
 
 // router.get("/book/single/:id", function(req,res){
 //     const bid = req.params.id;
