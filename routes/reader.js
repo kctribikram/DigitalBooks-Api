@@ -43,26 +43,26 @@ else{
 })
 
 
-// router.put('/reader/update/:id', function(req,res){
+router.put('/reader/update/:id', function(req,res){
     
-//     const id = req.params.id
-//     console.log(id) 
-//     const first_name = req.body.first_name
-//     const last_name = req.body.last_name
-//     const age = req.body.age
-//     const contact = req.body.contact
-//     const email = req.body.email 
-//     const location = req.body.location
+    const id = req.params.id
+    console.log(id) 
+    const first_name = req.body.first_name
+    const last_name = req.body.last_name
+    const age = req.body.age
+    const contact = req.body.contact
+    const email = req.body.email 
+    const location = req.body.location
     
-//     Reader.updateOne({_id : id},
-//         {first_name: first_name, last_name: last_name, age:age, contact:contact, email: email, location: location })
-//         .then(function(){
-//             res.status(200).json({message: "success"})
-//         })
-//         .catch(function(e){
-//             res.status(500).json({error: e})
-//         })
-// })
+    Reader.updateOne({_id : id},
+        {first_name: first_name, last_name: last_name, age:age, contact:contact, email: email, location: location })
+        .then(function(){
+            res.status(200).json({message: "success"})
+        })
+        .catch(function(e){
+            res.status(500).json({error: e})
+        })
+})
 
 
 // router.post('/reader/login', function(req, res){
