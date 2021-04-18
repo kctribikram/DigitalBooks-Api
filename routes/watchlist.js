@@ -14,19 +14,19 @@ router.post('/watchlist/insert', authentication.verifyUser, function(req, res){
     });
 })
 
-// router.get('/watchlist/:id', function(req, res){
-//     const watchlistID = req.params.id
-//     console.log(watchlistID)
+router.get('/watchlist/:id', function(req, res){
+    const watchlistID = req.params.id
+    console.log(watchlistID)
 
-//     const watchlist=Watchlist.find({userid:watchlistID})
-//     .then(function(data){
-//         res.status(200).json({message:"success", data:data})
-//         console.log(data)
-//     })
-//     .catch(function(e){
-//         res.status(500).json({error:e})
-//     });
-// })
+    const watchlist=Watchlist.find({userid:watchlistID})
+    .then(function(data){
+        res.status(200).json({message:"success", data:data})
+        console.log(data)
+    })
+    .catch(function(e){
+        res.status(500).json({error:e})
+    });
+})
    
 // router.delete("/watchlist/delete/:id", function(req,res){
 //     const wid = req.params.id;
