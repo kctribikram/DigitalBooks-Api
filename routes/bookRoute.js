@@ -80,13 +80,13 @@ router.get("/book/show", function(req, res){
     })
 })
 
-// router.get("/book/single/:id", function(req,res){
-//     const bid = req.params.id;
-//     Book.findOne({_id: bid}).then(function(data){
-//         res.status(200).json(data)
-//     }).catch(function(e){
-//         res.status(500).json({error : e})
-//     })
-// })
+router.get("/book/single/:id", function(req,res){
+    const bid = req.params.id;
+    Book.findOne({_id: bid}).then(function(data){
+        res.status(200).json(data)
+    }).catch(function(e){
+        res.status(500).json({error : e})
+    })
+})
 
 module.exports = router;
