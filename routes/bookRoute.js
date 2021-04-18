@@ -61,16 +61,16 @@ router.put('/book/update', function(req,res){
         })
 })
 
-// router.delete("/book/delete/:id", function(req,res){
-//     const bid = req.params.id;
-//     Book.deleteOne({_id : bid})
-//         .then(function(){
-//         res.status(200).json({message: "Deleted successfully!"})
-//     })
-//     .catch(function(e){
-//         res.status(500).json({error: e})
-//     })
-// })
+router.delete("/book/delete/:id", function(req,res){
+    const bid = req.params.id;
+    Book.deleteOne({_id : bid})
+        .then(function(){
+        res.status(200).json({message: "Deleted successfully!"})
+    })
+    .catch(function(e){
+        res.status(500).json({error: e})
+    })
+})
 
 // router.get("/book/show", function(req, res){
 //      Book.find().then(function(data){
