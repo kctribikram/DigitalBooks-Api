@@ -8,17 +8,17 @@ const storage = multer.diskStorage({
     }
 })
 
-// const fileFilter = function(req, file, cb){
-//     if(file.mimetype == 'image/jpeg' || file.mimetype == "application/pdf" || file.mimetype == 'audio/mpeg' || file.mimetype == 'image/png'){
-//         cb(null, true)
-//     }
-//     else{
-//         cb(false)
-//     }
-// }
-// const upload = multer({
-//     storage : storage,
-//     fileFilter : fileFilter
-// })
+const fileFilter = function(req, file, cb){
+    if(file.mimetype == 'image/jpeg' || file.mimetype == "application/pdf" || file.mimetype == 'audio/mpeg' || file.mimetype == 'image/png'){
+        cb(null, true)
+    }
+    else{
+        cb(false)
+    }
+}
+const upload = multer({
+    storage : storage,
+    fileFilter : fileFilter
+})
 
 module.exports = upload;
